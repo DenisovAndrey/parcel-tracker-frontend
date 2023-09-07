@@ -1,7 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
+import { OrdersList } from '../components/OrdersList';
+import { Head } from '../ui-kit/atoms/Head';
 
-export const OrdersView = () => {
-  console.log('e');
-
-  return (<div>Orders</div>);
-};
+const Container = styled.div`
+    margin: auto;
+    max-width: 800px;
+    border: 1px solid #F6F4FF;
+`;
+export const OrdersView = () => (
+  <Container>
+    <Head title="Your orders" description="Here you can find your recent orders" />
+    <OrdersList />
+  </Container>
+);
