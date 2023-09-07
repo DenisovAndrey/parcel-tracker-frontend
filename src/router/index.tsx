@@ -5,6 +5,7 @@ import { LoginView } from '../views/Login';
 import { RouterPaths } from './routerPaths';
 import { OrdersView } from '../views/Orders';
 import { RootState } from '../redux';
+import { CheckpointsView } from '../views/Checkpoints';
 
 const PrivateRoute: FC<{ children: ReactElement }> = ({ children }) => {
   const isLoggedIn = useSelector<RootState>((state) => state.auth.isLoggedIn);
@@ -24,5 +25,9 @@ export const router = createBrowserRouter([
   {
     path: RouterPaths.ROOT,
     element: <PrivateRoute><OrdersView /></PrivateRoute>,
+  },
+  {
+    path: `${RouterPaths.CHECKPOINTS}/:trackingNumber`,
+    element: <PrivateRoute><CheckpointsView /></PrivateRoute>,
   },
 ]);

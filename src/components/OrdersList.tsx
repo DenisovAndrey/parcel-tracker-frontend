@@ -7,6 +7,7 @@ import Link from '../ui-kit/atoms/Link';
 import { RootState } from '../redux';
 import { fetchOrdersIfNeeded } from '../redux/slices/ordersSlice';
 import type {} from 'redux-thunk/extend-redux';
+import { RouterPaths } from '../router/routerPaths';
 
 const Container = styled.div`
   padding: 20px;
@@ -27,7 +28,7 @@ export const OrdersList: FC = () => {
     <div>
       <Container>
         {orders?.length > 0 && orders.map((order) => (
-          <Link aria-label={`Order ${order.orderNo}`} key={order.orderNo} to="/">
+          <Link aria-label={`Order ${order.orderNo}`} key={order.orderNo} to={`${RouterPaths.CHECKPOINTS}/${order.trackingNumber}`}>
             <OrderPreview order={order} />
           </Link>
         ))}
