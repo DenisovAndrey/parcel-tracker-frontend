@@ -20,7 +20,7 @@ const Description = styled.p`
   font-size: 14px;
 `;
 
-export const FormHead: FC<{ title: string, description: string }> = ({
+export const Head: FC<{ title: string, description: string }> = ({
   title,
   description,
 }) => (

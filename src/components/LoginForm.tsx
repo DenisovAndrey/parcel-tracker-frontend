@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
-import { FormHead } from '../ui-kit/atoms/FormHead';
+import { Head } from '../ui-kit/atoms/Head';
 import { InputSet } from '../ui-kit/atoms/InputSet';
 import { Button } from '../ui-kit/atoms/Button';
 import { isValidEmail } from '../helpers/validators';
@@ -49,7 +49,7 @@ export const LoginForm: FC<LoginFromProps> = ({ handleSubmit }) => {
 
   return (
     <Form aria-label={appDescription} onSubmit={onSubmit}>
-      <FormHead description={appDescription} title={appTitle} />
+      <Head description={appDescription} title={appTitle} />
       <Section>
         <InputSet title="Email" type="email" onChange={setEmail} value={email} />
         <ButtonsSection>
