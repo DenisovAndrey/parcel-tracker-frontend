@@ -1,11 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer, { AuthState } from './slices/authSlice';
+import authReducer from './slices/authSlice';
+import ordersReducer from './slices/ordersSlice';
+import type { AuthState } from './slices/authSlice';
+import type { OrdersState } from './slices/ordersSlice';
 
-export interface StateType { auth: AuthState }
+export interface StateType { auth: AuthState, orders: OrdersState }
 
 const store = configureStore<StateType>({
   reducer: {
     auth: authReducer,
+    orders: ordersReducer,
   },
 });
 
