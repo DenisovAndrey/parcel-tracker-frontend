@@ -1,12 +1,13 @@
 import React, { FC, ReactElement } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { LoginView } from '../views/Login';
 import { RouterPaths } from './routerPaths';
-import { useAuthContext } from '../providers/LoginProvider';
 import { OrdersView } from '../views/Orders';
+import { RootState } from '../redux';
 
 const PrivateRoute: FC<{ children: ReactElement }> = ({ children }) => {
-  const { isLoggedIn } = useAuthContext();
+  const isLoggedIn = useSelector<RootState>((state) => state.auth.isLoggedIn);
 
   if (!isLoggedIn) {
     return <Navigate to={RouterPaths.LOGIN} />;
