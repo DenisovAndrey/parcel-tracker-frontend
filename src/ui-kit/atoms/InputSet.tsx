@@ -27,13 +27,20 @@ interface InputSetProps {
   onChange?: (v: string) => void
   title?: string
   disabled?: boolean
+  type?: React.HTMLInputTypeAttribute
 }
 
 export const InputSet: FC<InputSetProps> = ({
-  value, onChange = (v) => {}, title, disabled = false,
+  value, onChange = (v) => {}, title, disabled = false, type = 'text',
 }) => (
   <Label>
     {title && <Title>{title}</Title>}
-    <Input area-label={title} disabled={disabled} value={value} type="text" onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value)} />
+    <Input
+      area-label={title}
+      disabled={disabled}
+      value={value}
+      type={type}
+      onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
+    />
   </Label>
 );
