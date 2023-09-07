@@ -4,6 +4,14 @@
 
 This is frontend part of [Parcel tracking service](https://github.com/DenisovAndrey/parcel-tracker-service)
 
+## LIVE DEMO
+
+This app has review app.
+To see live demo you need:
+1. open https://parcel-tracker-service.onrender.com/api-docs/ (**WAIT 1 MIN, its a free hosting, so we need to wake up the service**)
+2. once https://parcel-tracker-service.onrender.com/api-docs/ becomes accessible you can go to the next step
+3. open https://parcel-tracker-frontend.onrender.com/ (**WAIT 1 MIN, its a free hosting, so we need to wake up the service**)
+
 ## Purpose
 
 Parcel Tracker is a web application designed to track parcels in different delivery suppliers. 
