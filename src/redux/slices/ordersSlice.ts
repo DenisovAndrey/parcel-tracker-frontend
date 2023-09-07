@@ -45,16 +45,12 @@ export const ordersSlice = createSlice({
 
 export default ordersSlice.reducer;
 
-export const selectOrders = (state: RootState) => state.orders.orders;
-
-export const selectOrdersFetched = (state: RootState) => state.orders.orders.length > 0;
-
 export const fetchOrdersIfNeeded = (): ThunkAction<void, RootState, null, any> => async (
   dispatch: ThunkDispatch<RootState, null, any>,
   getState: () => RootState,
 ) => {
   const state = getState();
-  const ordersFetched = selectOrdersFetched(state);
+  const ordersFetched = state.orders.orders?.length > 0;
 
   if (!ordersFetched) {
     try {
