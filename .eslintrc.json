@@ -1,0 +1,43 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "airbnb",
+        "airbnb-typescript",
+        "airbnb/hooks",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:cypress/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "react"
+    ],
+    "ignorePatterns": ["cypress/**/*.ts"],
+    "rules": {
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "import/no-extraneous-dependencies": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "import/prefer-default-export": "off",
+        "react/function-component-definition": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "react/require-default-props": "off",
+        "no-void": "off"
+    }
+}
